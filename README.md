@@ -1,2 +1,2 @@
 # Technical-Documentation-Page
-A test technical documentation page for practice.
+Technical documentation page for practice.
