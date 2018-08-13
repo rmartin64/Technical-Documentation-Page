@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Technical Documentation Page</title>
+<link rel="stylesheet" href="page.css" type="text/css">
+</head>
+<body>
+<main id="main-doc">
+  <section class="main-section" id="Introduction_to_HTML">
+    <header>
+      <h2>Introduction to HTML</h2>
+    </header>
+    <p>HTML (Hypertext Markup Language) is not a programming language; it is a markup language used to tell your browser how to structure the web pages you visit. It can be as complicated or as simple as the web developer wishes it to be. HTML consists of a series of elements, which you use to enclose, wrap, or mark up different parts of the content to make it appear or act a certain way. The enclosing tags can make a bit of content into a hyperlink to link to another page on the web, italicize words, and so on. For example, take the following line of content:</p>
+    <code><pre>My cat is very grumpy</pre></code>
+    <p>If we wanted the line to stand by itself, we could specify that it is a paragraph by enclosing it in a paragraph  <code>&lt;p&gt;</code> element:</p>
+ <code><pre>&lt;p&gt;My cat is very grumpy&lt;/p&gt;</pre></code>
+  </section>
+   <section class="main-section" id="Anatomy_of_an_HTML_element">
+     <header>
+       <h2>Anatomy of an HTML element</h2>
+    </header>
+     <p>Let's explore our paragraph element a bit further. The main parts of our element are:</p>
+     <ul>
+       <li>The opening tag, which consists of the name of the element (in this case, p), wrapped in opening and closing angle brackets. This states where the element begins or starts to take effect — in this case where the start of the paragraph is.</li>
+       <li>The closing tag, which is the same as the opening tag, except that it includes a forward slash before the element name. This states where the element ends — in this case where the end of the paragraph is. Failing to include a closing tag is a common beginner error and can lead to strange results.</li>
+       <li>The content, which is the content of the element — in this case, just text.</li>
+       <li>The element, which is the opening tag plus the closing tag plus the content.</li>
+     </ul>
+  </section>
+   <section class="main-section" id="Block_versus_inline_elements">
+     <header>
+       <h2>Block versus inline elements</h2>
+    </header>
+     <p>There are two important categories of elements in HTML which you should know about. They are block-level elements and inline elements.</p>
+     <ul>
+       <li>
+         Block-level elements form a visible block on a page — they will appear on a new line from whatever content went before it, and any content that goes after it will also appear on a new line. Block-level elements tend to be structural elements on the page that represent, for example, paragraphs, lists, navigation menus, footers, etc. A block-level element wouldn't be nested inside an inline element, but it might be nested inside another block-level element.
+       </li>
+       <li>
+         Inline elements are those that are contained within block-level elements and surround only small parts of the document’s content, not entire paragraphs and groupings of content. An inline element will not cause a new line to appear in the document; they would normally appear inside a paragraph of text, for example an <code>&lt;a&gt;</code> element (hyperlink) or emphasis elements such as <code>&lt;em&gt;</code> or <code>&lt;strong&gt;</code>.
+       </li>
+     </ul>
+  </section>
+   <section class="main-section" id="Empty_elements">
+     <header>
+       <h2>Empty elements</h2>
+    </header>
+     <p>Not all elements follow the above pattern of opening tag, content, closing tag. Some elements consist only of a single tag, which is usually used to insert/embed something in the document at the place it is included. For example, the <code>&lt;img&gt;</code> element embeds an image file onto a page in the position it is included in:</p>
+     <pre class="linkwrap">&lt;img src="https://examplewebsiteforhtmlimage.com/example-image.png"&gt;</pre>
+   <p>This would output the image directly where you've placed the code on the page.</p>
+  </section>
+   <section class="main-section" id="Attributes">
+     <header>
+       <h2>Attributes</h2>
+    </header>
+     <p>Elements can also have attributes, which look like this:</p>
+     <code><pre>&lt;p class="editor-note"&gt;My cat is very grumpy&lt;/p&gt;</pre></code>
+     <p>Attributes contain extra information about the element which you don't want to appear in the actual content. In this case, the class attribute allows you to give the element an identifying name that can be later used to target the element with style information and other things.</p>
+     <p>An attribute should have:</p>
+     <ul>
+       <li>
+         A space between it and the element name (or the previous attribute, if the element already has one or more attributes.)
+       </li>
+       <li>
+         The attribute name, followed by an equals sign.
+       </li>
+       <li>
+         An attribute value, with opening and closing quote marks wrapped around it.
+       </li>  
+     </ul>
+  </section>
+  <section class="main-section" id="Anatomy_of_a_HTML_document">
+     <header>
+       <h2>Anatomy of a HTML document</h2>
+    </header>
+    <p>That wraps up the basics of individual HTML elements, but they aren't very useful on their own. Now we'll look at how individual elements are combined to form an entire HTML page:</p>
+    <code><pre>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My test page&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;p&gt;This is my page&lt;/p&gt;
+  &lt;/body&gt;
+ &lt;/html&gt;</pre></code>
+    <p>Here we have:</p>
+  
+  <ul>
+      <li><code>&lt;!DOCTYPE html&gt;</code>: The doctype. In the mists of time, when HTML was young (about 1991/2), doctypes were meant to act as links to a set of rules that the HTML page had to follow to be considered good HTML, which could mean automatic error checking and other useful things. However, these days no one really cares about them, and they are really just a historical artifact that needs to be included for everything to work right. <code>&lt;!DOCTYPE html&gt;</code> is the shortest string of characters that counts as a valid doctype; that's all you really need to know.</li>
+       <li>
+         <code>&lt;html&gt;&lt;/html&gt;</code>: The <code>&lt;html&gt;</code> element. This element wraps all the content on the entire page, and is sometimes known as the root element.</li>
+    <li><code>&lt;head&gt;&lt;/head&gt;</code>: The <code>&lt;head&gt;</code> element. This element acts as a container for all the stuff you want to include on the HTML page that isn't the content you are showing to your page's viewers. This includes things like keywords and a page description that you want to appear in search results, CSS to style our content, character set declarations, and more.</li>
+    <li><code>&lt;meta charset="utf-8"&gt;</code>: This element sets the character set your document should use to UTF-8, which includes most characters from the vast majority of human written languages. Essentially it can now handle any textual content you might put on it. There is no reason not to set this, and it can help avoid some problems later.</li>
+    <li><code>&lt;title&gt;&lt;/title&gt;</code>: The <code>&lt;title&gt;</code> element. This sets the title of your page, which is the title that appears in the browser tab the page is loaded in, and is used to describe the page when you bookmark/favorite it.</li>
+    <li><code>&lt;body&gt;&lt;/body&gt;</code>: The <code>&lt;body&gt;</code> element. This contains all the content that you want to show to web users when they visit your page, whether that's text, images, videos, games, playable audio tracks, or whatever else.
+</li>
+    </ul>
+  </section>
+  <section class="main-section" id="Basic_sections_of_a_document">
+     <header>
+       <h2>Basic sections of a document</h2>
+    </header>
+    <p>Webpages can and will look pretty different from one another, but they all tend to share similar standard components, unless the page is displaying a fullscreen video or game, is part of some kind of art project, or is just badly structured:</p>
+    <h3>Header</h3>
+    <p>Usually a big strip across the top with a big heading and/or logo. This is where the main common information about a website usually stays from one webpage to another.</p>
+    <h3>Navigation bar</h3>
+    <p>Links to the site's main sections; usually represented by menu buttons, links, or tabs. Like the header, this content usually remains consistent from one webpage to another — having an inconsistent navigation on your website will just lead to confused, frustrated users. Many web designers consider the navigation bar to be part of the header rather than a individual component, but that's not a requirement; in fact some also argue that having the two separate is better for accessibility, as screen readers can read the two features better if they are separate.</p>
+    <h3>Main content</h3>
+    <p>A big area in the center that contains most of the unique content of a given webpage, for example the video you want to watch, or the main story you're reading, or the map you want to view, or the news headlines, etc. This is the one part of the website that definitely will vary from page to page!</p>
+    <h3>Sidebar</h3>
+    <p>Some peripheral info, links, quotes, ads, etc. Usually this is contextual to what is contained in the main content (for example on a news article page, the sidebar might contain the author's bio, or links to related articles) but there are also cases where you'll find some recurring elements like a secondary navigation system.</p>
+    <h3>Footer</h3>
+    <p>A strip across the bottom of the page that generally contains fine print, copyright notices, or contact info. It's a place to put common information (like the header) but usually that information is not critical or secondary to the website itself. The footer is also sometimes used for SEO purposes, by providing links for quick access to popular content.</p>
+  </section>
+  <section class="main-section" id="HTML_for_structuring_content">
+     <header>
+       <h2>HTML for structuring content</h2>
+    </header>
+    <p>In your HTML code, you can mark up sections of content based on their functionality — you can use elements that represent the sections of content described above unambiguously, and assistive technologies like screenreaders can recognise those elements and help with tasks like "find the main navigation", or "find the main content." There are a number of consequences of not using the right element structure and semantics for the right job.</p>
+    <p>To implement such semantic mark up, HTML provides dedicated tags that you can use to represent such sections, for example:</p>
+    <ul>
+      <li>header: <code>&lt;header&gt;</code></li>
+      <li>navigation bar: <code>&lt;nav&gt;</code></li>
+<li>main content: <code>&lt;main&gt;</code>, with various content subsections represented by <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and <code>&lt;div&gt;</code> elements</li>
+      <li>sidebar: <code>&lt;aside&gt;</code>; often placed inside <code>&lt;main&gt;</code></li>
+      <li>footer: <code>&lt;footer&gt;</code></li>
+      
+    </ul>
+  </section>
+   <section class="main-section" id="Lists">
+     <header>
+       <h2>Lists</h2>
+    </header>
+       <p>Now let's turn our attention to lists. Lists are everywhere in life — from your shopping list to the list of directions you subconsciously follow to get to your house every day. Lists are everywhere on the Web too, and we've got three different types to worry about.</p>
+       <h3>Unordered</h3>
+       <p>Unordered lists are used to mark up lists of items for which the order of the items doesn't matter — let's take a shopping list as an example. Every unordered list starts off with a <code>&lt;ul&gt;</code> element — this wraps around all the list items. The last step is to wrap each list item in a <code>&lt;li&gt;</code> (list item) element:</p>
+       <code><pre>&lt;ul&gt;
+  &lt;li&gt;milk&lt;/li&gt;
+  &lt;li&gt;eggs&lt;/li&gt;
+  &lt;li&gt;bread&lt;/li&gt;
+  &lt;li&gt;hummus&lt;/li&gt;
+&lt;/ul&gt;</pre></code>
+    <h3>Ordered</h3>
+    <p>Ordered lists are lists in which the order of the items does matter — let's take a set of directions as an example. The markup structure is the same as for unordered lists, except that you have to wrap the list items in an <code>&lt;ol&gt;</code> element, rather than <code>&lt;ul&gt;</code>:</p>
+    <code><pre>&lt;ol&gt;
+  &lt;li&gt;Drive to the end of the road&lt;/li&gt;
+  &lt;li&gt;Turn right&lt;/li&gt;
+  &lt;li&gt;Go straight across the first two roundabouts&lt;/li&gt;
+  &lt;li&gt;Turn left at the third roundabout&lt;/li&gt;
+  &lt;li&gt;The school is on your right, 300 meters up the road&lt;/li&gt;
+&lt;/ol&gt;</pre></code>
+    <h3>Description</h3>
+    <p>The purpose of these lists is to mark up a set of items and their associated descriptions, such as terms and definitions, or questions and answers. Let's look at an example of a set of terms and definitions. Description lists use a different wrapper than the other list types — <code>&lt;dl&gt;</code>; in addition each term is wrapped in a <code>&lt;dt&gt;</code> (description term) element, and each description is wrapped in a <code>&lt;dd&gt;</code> (description definition) element:</p>
+  <code><pre>&lt;dl&gt;
+  &lt;dt&gt;soliloquy&lt;/dt&gt;
+  &lt;dd&gt;In drama, where a character speaks to themselves, representing their inner thoughts or feelings and in the process relaying them to the audience (but not to other characters.)&lt;/dd&gt;
+  &lt;dt&gt;monologue&lt;/dt&gt;
+  &lt;dd&gt;In drama, where a character speaks their thoughts out loud to share them with the audience and any other characters present.&lt;/dd&gt;
+  &lt;dt&gt;aside&lt;/dt&gt;
+  &lt;dd&gt;In drama, where a character shares a comment only with the audience for humorous or dramatic effect. This is usually a feeling, thought, or piece of additional background information.&lt;/dd&gt;
+&lt;/dl&gt;</pre></code>
+  </section>
+    <section class="main-section" id="Hyperlinks">
+     <header>
+       <h2>Hyperlinks</h2>
+    </header>
+      <p>A basic link is created by wrapping the text or other content you want to turn into a link inside an <code>&lt;a&gt;</code> element, and giving it an href attribute (also known as a Hypertext Reference, or target) that will contain the web address you want the link to point to.
+ <pre class="linkwrap">&lt;p&gt;I'm creating a link to &lt;a href="https://www.mozilla.org/en-US/"&gt;the Mozilla homepage&lt;/a&gt;.
+&lt;/p&gt;</pre>
+  </section>
+  <section class="main-section" id="Why_do_we_need_structure?">
+     <header>
+       <h2>Why do we need structure?</h2>
+    </header>
+ <p>Users looking at a web page tend to scan quickly to find relevant content, often just reading the headings to begin with (we usually spend a very short time on a web page). If they can't see anything useful within a few seconds, they'll likely get frustrated and go somewhere else.</p>
+<p>Search engines indexing your page consider the contents of headings as important keywords for influencing the page's search rankings. Without headings, your page will perform poorly in terms of SEO (Search Engine Optimization).</p>
+<p>Severely visually impaired people often don't read web pages; they listen to them instead. This is done with software called a screen reader. This software provides ways to get fast access to given text content. Among the various techniques used, they provide an outline of the document by reading out the headings, allowing their users to find the information they need quickly. If headings are not available, they will be forced to listen to the whole document read out loud.</p>
+<p>To style content with CSS, or make it do interesting things with JavaScript, you need to have elements wrapping the relevant content, so CSS/JavaScript can effectively target it.</p>
+      <p>We therefore need to give our content structural markup.</p>
+  </section>
+  <section class="main-section" id="Why_do_we_need_semantics?">
+     <header>
+       <h2>Why do we need semantics?</h2>
+    </header>
+    <p>Semantics are relied on everywhere around us — we rely on previous experience to tell us what the function of everyday objects is; when we see something, we know what its function will be. So, for example, we expect a red traffic light to mean "stop", and a green traffic light to mean "go". Things can get tricky very quickly if the wrong semantics are applied (do any countries use red to mean "go"? I hope not.)
+
+In a similar vein, we need to make sure we are using the correct elements, giving our content the correct meaning, function, or appearance. In this context the <code>&lt;h1&gt;</code> element is also a semantic element, which gives the text it wraps around the role (or meaning) of "a top level heading on your page."</p>
+    <code><pre>&lt;h1&gt;This is a top level heading&lt;/h1&gt;</pre></code>
+    <p>By default, the browser will give it a large font size to make it look like a heading (although you could style it to look like anything you wanted using CSS). More importantly, its semantic value will be used in multiple ways, for example by search engines and screen readers (as mentioned above.)
+
+On the other hand, you could make any element look like a top level heading. Consider the following:</p>
+    <code><pre>&lt;span style="font-size: 32px; margin: 21px 0;">Is this a top level heading?&lt;/span&gt;</pre></code>
+    <p>This is a <code>&lt;span&gt;</code> element. It has no semantics. You use it to wrap content when you want to apply CSS to it (or do something to it with JavaScript) without giving it any extra meaning. We've applied some CSS to it to make it look like a top level heading, but since it has no semantic value, it will not get any of the extra benefits described above. It is a good idea to use the relevant HTML element for the job.</p>
+  </section>
+ <section class="main-section" id="Reference">
+     <header>
+       <h2>Reference</h2>
+    </header>
+   <p>The technical documentation on this page has been cited from <a href="https://developer.mozilla.org/en-US/docs/Web/HTML">MDN</a>.</p>
+  </section>
+</main>
+  <nav id="navbar">
+<div>
+  <header>
+      <h2>HTML Documentation</h2>
+  </header>
+    <ul id="navlist">
+      <li><a href="#Introduction_to_HTML" class="nav-link">Introduction to HTML</a></li>
+      <li> <a href="#Anatomy_of_an_HTML_element" class="nav-link">Anatomy of an HTML element</a></li>
+      <li><a href="#Block_versus_inline_elements" class="nav-link">Block versus inline elements</a></li>
+      <li><a href="#Empty_elements" class="nav-link">Empty elements</a></li>
+      <li><a href="#Attributes" class="nav-link">Attributes</a></li>
+      <li><a href="#Anatomy_of_a_HTML_document" class="nav-link">Anatomy of a HTML document</a></li>
+      <li><a href="#Basic_sections_of_a_document" class="nav-link">Basic sections of a document</a></li>
+      <li> <a href="#HTML_for_structuring_content" class="nav-link">HTML for structuring content</a></li>
+      <li><a href="#Lists" class="nav-link">Lists</a></li>
+      <li><a href="#Hyperlinks" class="nav-link">Hyperlinks</a></li>
+      <li><a href="#Why_do_we_need_structure?" class="nav-link">Why do we need structure?</a></li>
+      <li><a href="#Why_do_we_need_semantics?" class="nav-link">Why do we need semantics?</a></li>
+      <li id="referencelist"><a href="#Reference" class="nav-link">Reference</a></li>
+    </ul>
+    </div>
+  </nav>
+  </body>
+  </html>
